@@ -1,21 +1,21 @@
-{% capture email_title %}Your order has been updated. {% endcapture %}
+{% capture email_title %}Additional Payment Needed{% endcapture %}
 
 {% capture email_sub_title %}<strong>Hi {{ customer.first_name | default: billing_address.first_name }},</strong>
-Additional payment of {{ order.total_outstanding | money }} is needed <br>to update your order.{% endcapture %}
+The items in your order were changed and an additional payment of {{ order.total_outstanding | money }} is needed <br>to
+complete your order.{% endcapture %}
 
-{% capture email_footer %}This email was sent to : <b>{{email}}</b><br>You are receiving this email because you are
-subscribed to our mailing list. For any questions please send to <br><b>{{shop.email}}</b>{% endcapture %}
-
+{% capture email_footer %}This email was sent to: <b>{{email}}</b><br>You are receiving this email because you placed
+an order on our website{% endcapture %}
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@400;500&display=swap');
 
     h1 {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Poppins', sans-serif;
         color: #000000;
         font-size: 28px;
         line-height: 33px;
-        font-weight: 700;
+        font-weight: 500;
         letter-spacing: 0.02em;
         text-align: center;
         text-decoration: none;
@@ -24,13 +24,12 @@ subscribed to our mailing list. For any questions please send to <br><b>{{shop.e
     }
 
     h3 {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Poppins', sans-serif;
         color: #000000;
         font-size: 18px;
         line-height: 21px;
         font-weight: 400;
         letter-spacing: 0.02em;
-        ;
         text-decoration: none;
         margin: 0;
         text-align: center;
@@ -38,46 +37,125 @@ subscribed to our mailing list. For any questions please send to <br><b>{{shop.e
 
     .order_status {
         padding: 18px 150px;
-        background-color: #10220E;
-        border-radius: 9px;
-        font-family: 'Roboto', sans-serif;
+        background-color: #295524;
+        border-radius: 50px;
+        font-family: 'Montserrat', sans-serif;
         color: #ffffff;
         font-size: 18px;
         line-height: 27px;
-        font-weight: 700;
+        font-weight: 400;
         letter-spacing: 0.02em;
-        ;
         text-decoration: none;
         margin: 0;
         text-transform: uppercase;
     }
 
     p {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         color: #000000;
         font-size: 14px;
         line-height: 21px;
         font-weight: 400;
         letter-spacing: 0.02em;
-        ;
         text-decoration: none;
         margin: 0;
     }
 
     .total_button {
         padding: 18px 32px;
-        background-color: #10220E;
-        border-radius: 9px;
-        font-family: 'Roboto', sans-serif;
+        background-color: #295524;
+        border-radius: 50px;
+        font-family: 'Montserrat', sans-serif;
         color: #ffffff;
         font-size: 18px;
         line-height: 27px;
-        font-weight: 700;
+        font-weight: 400;
         letter-spacing: 0.02em;
-        ;
         text-decoration: none;
         margin: 0;
         text-transform: uppercase;
+        text-align: center;
+    }
+
+    .button1 {
+        padding: 18px 32px;
+        background-color: #295524;
+        border-radius: 50px;
+        font-family: 'Montserrat', sans-serif;
+        color: #ffffff;
+        font-size: 18px;
+        line-height: 27px;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        text-decoration: none;
+        margin: 0;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .container {
+        width: 100% !important;
+        text-align: center;
+        background-color: #f4f1ea;
+        padding: 20px;
+    }
+
+    .subcontainer {
+        width: 640px;
+        text-align: center;
+        border-radius: 15px 15px 0px 0px;
+        background-color: #ffffff;
+    }
+
+    .footer {
+        width: 640px;
+        text-align: center;
+        background-color: #10220E;
+        border-radius: 0px 0px 15px 15px;
+    }
+
+    .footer-text {
+        text-align: center;
+        padding-bottom: 20px;
+        padding-top: 30px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .footer-icons {
+        padding-top: 40px;
+        text-align: center;
+    }
+
+    .f1 {
+        padding-right: 25px;
+    }
+
+    .f2 {
+        padding: 0 25px;
+    }
+
+    .f3 {
+        padding: 0 25px;
+    }
+
+    .f4 {
+        padding-left: 25px;
+    }
+
+    .fd {
+        color: #DADADA;
+    }
+
+    .footer-link-section {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 35px;
+        text-align: center;
+    }
+
+    .footer-link {
+        color: #ffffff;
         text-align: center;
     }
 
@@ -153,6 +231,9 @@ subscribed to our mailing list. For any questions please send to <br><b>{{shop.e
 
         .footer {
             width: 100% !important;
+            text-align: center;
+            background-color: #10220E;
+            border-radius: 0px 0px 15px 15px;
         }
 
         .order_status {
@@ -191,6 +272,10 @@ subscribed to our mailing list. For any questions please send to <br><b>{{shop.e
         }
 
         .f3 {
+            padding: 0 15px !important;
+        }
+
+        .f4 {
             padding-left: 15px !important;
         }
 
@@ -202,6 +287,12 @@ subscribed to our mailing list. For any questions please send to <br><b>{{shop.e
             width: 100% !important;
         }
 
+        .button1 {
+            font-size: 15px !important;
+            line-height: 17px !important;
+            padding: 9px 22px !important;
+        }
+
         .p1 {
             padding: 20px 0 !important;
         }
@@ -211,19 +302,15 @@ subscribed to our mailing list. For any questions please send to <br><b>{{shop.e
             line-height: 14px !important;
         }
 
-
-
-
     }
 </style>
 
 <!-- container -->
-<table class="container" width="100%" align="center" bgcolor="#e5e5e5" cellpadding="0" cellspacing="0">
+<table class="container" cellpadding="0" cellspacing="0">
     <tr>
-        <td width="100%" align="center">
+        <td width="100%" style="text-align: center;">
             <!-- subcontainer -->
-            <table class="subcontainer" cellpadding="0" cellspacing="0" bgcolor="#F4F1EA" width="640px" align="center"
-                style="border-radius: 15px;">
+            <table class="subcontainer" cellpadding="0" cellspacing="0">
                 <tr>
                     <td align="center" width="100%">
                         <!-- header -->
@@ -371,7 +458,7 @@ subscribed to our mailing list. For any questions please send to <br><b>{{shop.e
                                 <td align="right" width="48%"></td>
                                 <td width="4%" align="center"></td>
                                 <td align="left" width="48%">
-                                    <p style="text-align: left;  font-size: 12px;">you saved<span
+                                    <p style="text-align: left;  font-size: 12px;">you saved <span
                                             class="total-discount--amount">{{ total_discounts | money }}</p>
                                 </td>
                             </tr>
@@ -379,7 +466,7 @@ subscribed to our mailing list. For any questions please send to <br><b>{{shop.e
                         <table class="button" width="100%" align="right">
                             <tr>
                                 <td align="center" style="padding-top: 40px; " width="100% !important"><a
-                                        href="{{order_status_url}}" class="total_button">Total:{{ total_price |
+                                        href="{{order_status_url}}" class="total_button">Total: {{ total_price |
                                         money_with_currency }}</a></td>
                             </tr>
                         </table>
@@ -431,38 +518,34 @@ subscribed to our mailing list. For any questions please send to <br><b>{{shop.e
     </tr>
 </table>
 <!-- end-subcontainer -->
-<table class="footer" width="640px" align="center" bgcolor="#10220E">
+<!-- footer -->
+<table class="footer">
     <tr>
-        <td align="center" style="padding-top: 30px;">
-            <h3 style="color: #ffffff; text-align: center; font-weight: 600;">Get in Touch</h3>
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            <table align="center" style="padding-top: 10px;">
+        <td style="text-align: center;">
+            <table class="footer-icons">
                 <tr>
 
                     <td style="padding: 0 10px"><a href="https://www.instagram.com/hummingbirdhammocks/"><img
-                                src="https://cdn.shopify.com/s/files/1/0519/3990/1592/files/notif_in_1.png?v=1628916501"
+                                src="https://cdn.hummingbirdhammocks.com/email/global/icons/instagram.png"
                                 style="width: 30px;"></a></td>
 
                     <td style="padding: 0 10px"><a href="https://www.facebook.com/hummingbirdhammocks"><img
-                                src="https://cdn.shopify.com/s/files/1/0519/3990/1592/files/notif_fb_1_0a326a98-e651-40df-a9fd-4346d7089a1e.png?v=1639125838"
+                                src="https://cdn.hummingbirdhammocks.com/email/global/icons/facebook.png"
                                 style="width: 30px;"></a></td>
 
 
                     <td style="padding: 0 10px"><a href="https://www.pinterest.com/HHammocks/"><img
-                                src="https://cdn.shopify.com/s/files/1/0519/3990/1592/files/notif_pi_1_eb46b72a-fe0e-4acb-b5b7-1e31f7a540d3.png?v=1639125951"
+                                src="https://cdn.hummingbirdhammocks.com/email/global/icons/pinterest.png"
                                 style="width: 30px;"></a></td>
 
 
                     <td style="padding: 0 10px"><a href="https://twitter.com/HHammocks"><img
-                                src="https://cdn.shopify.com/s/files/1/0519/3990/1592/files/notif_tw_1_032ab2ef-5f23-4fb3-ad01-a7a3359250b2.png?v=1639126096"
+                                src="https://cdn.hummingbirdhammocks.com/email/global/icons/twitter.png"
                                 style="width: 30px;"></a></td>
 
 
-                    <td style="padding: 0 10px"><a href="https://www.youtube.com/channel/UCF5INrv1bc4DHY6ppDqoZPw"><img
-                                src="https://cdn.shopify.com/s/files/1/0519/3990/1592/files/Group_73.png?v=1639126123"
+                    <td style="padding: 0 10px"><a href="https://www.youtube.com/c/HummingbirdhammocksLLC"><img
+                                src="https://cdn.hummingbirdhammocks.com/email/global/icons/youtube.png"
                                 style="width: 30px;"></a></td>
 
 
@@ -472,35 +555,61 @@ subscribed to our mailing list. For any questions please send to <br><b>{{shop.e
         </td>
     </tr>
     <tr>
-        <td align="center" style="padding-bottom: 40px; padding-top: 30px; padding-left: 40px; padding-right: 40px;"
-            class="foot_text">
+        <td class="footer-text">
             <p style="color: #ffffff; text-transform: none;">{{ email_footer }}</p>
         </td>
     </tr>
     <tr>
-        <td>
-            <table align="center" style="margin-bottom: 35px;">
+        <td class="footer-text">
+            <p style="color: #ffffff; text-transform: none;">
+                <b>Hummingbird Hammocks</b><br />
+                18611 Cherry Springs Ranch Dr<br />
+                Monument, CO 80132 USA<br />
+                support@hummingbirdhammocks.com
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: center;">
+            <table class="footer-link-section">
                 <tr>
-                    <td style="padding-right: 25px;" class="f1">
-                        <a href="https://hummingbirdhammocks.com/pages/privacy-policy" style="text-decoration: none;">
-                            <p style=" color: #ffffff; font-weight: 500;text-align: center;">Privacy Policy</p>
+                    <td class="f1">
+                        <a href="mailto:support@hummingbirdhammocks.com" style="text-decoration: none;">
+                            <strong>
+                                <p class="footer-link">Email
+                                    Us</p>
+                            </strong>
                         </a>
                     </td>
                     <td>
-                        <p style="color: #DADADA;">|</p>
+                        <p class="fd">|</p>
                     </td>
-                    <td style="padding: 0 25px;" class="f2">
-                        <a href="https://hummingbirdhammocks.com/pages/terms-and-conditions"
+                    <td class="f2">
+                        <a href="https://hummingbirdhammocks.com/" style="text-decoration: none;">
+                            <strong>
+                                <p class="footer-link">Visit Website</p>
+                            </strong>
+                        </a>
+                    </td>
+                    <td>
+                        <p class="fd">|</p>
+                    </td>
+                    <td class="f3">
+                        <a href="https://help.hummingbirdhammocks.com/support/home" style="text-decoration: none;">
+                            <strong>
+                                <p class="footer-link">Knowledgebase</p>
+                            </strong>
+                        </a>
+                    </td>
+                    <td>
+                        <p class="fd">|</p>
+                    </td>
+                    <td class="f4">
+                        <a href="https://help.hummingbirdhammocks.com/support/tickets/new"
                             style="text-decoration: none;">
-                            <p style=" color: #ffffff; font-weight: 500;text-align: center;">Terms and Conditions</p>
-                        </a>
-                    </td>
-                    <td>
-                        <p style="color: #DADADA;">|</p>
-                    </td>
-                    <td style="padding-left: 25px;" class="f3">
-                        <a href="https://hummingbirdhammocks.com/pages/shipping-policy" style="text-decoration: none;">
-                            <p style=" color: #ffffff; font-weight: 500;text-align: center;">Shipping Policy</p>
+                            <strong>
+                                <p class="footer-link">Support Ticket</p>
+                            </strong>
                         </a>
                     </td>
                 </tr>
@@ -508,6 +617,7 @@ subscribed to our mailing list. For any questions please send to <br><b>{{shop.e
         </td>
     </tr>
 </table>
+<!-- end footer -->
 </td>
 </table>
 </td>

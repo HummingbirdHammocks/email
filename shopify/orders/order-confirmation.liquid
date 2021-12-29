@@ -83,8 +83,16 @@ an order on our website{% endcapture %}
 
     .container {
         width: 100% !important;
+        text-align: center;
         background-color: #f4f1ea;
         padding: 20px;
+    }
+
+    .subcontainer {
+        width: 640px;
+        text-align: center;
+        border-radius: 15px 15px 0px 0px;
+        background-color: #ffffff;
     }
 
     .footer {
@@ -94,11 +102,54 @@ an order on our website{% endcapture %}
         border-radius: 0px 0px 15px 15px;
     }
 
+    .footer-text {
+        text-align: center;
+        padding-bottom: 20px;
+        padding-top: 30px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .footer-icons {
+        padding-top: 40px;
+        text-align: center;
+    }
+
+    .f1 {
+        padding-right: 25px;
+    }
+
+    .f2 {
+        padding: 0 25px;
+    }
+
+    .f3 {
+        padding: 0 25px;
+    }
+
+    .f4 {
+        padding-left: 25px;
+    }
+
+    .fd {
+        color: #DADADA;
+    }
+
+    .footer-link-section {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 35px;
+        text-align: center;
+    }
+
+    .footer-link {
+        color: #ffffff;
+        text-align: center;
+    }
+
     @media screen and (max-width:450px) {
         .container {
             width: 100% !important;
-            background-color: #f4f1ea;
-            padding: 20px;
         }
 
         .subcontainer {
@@ -237,12 +288,11 @@ an order on our website{% endcapture %}
 </style>
 
 <!-- container -->
-<table class="container" width="100%" align="center" cellpadding="0" cellspacing="0">
+<table class="container" cellpadding="0" cellspacing="0">
     <tr>
-        <td width="100%" align="center">
+        <td width="100%" style="text-align: center;">
             <!-- subcontainer -->
-            <table class="subcontainer" cellpadding="0" cellspacing="0" bgcolor="#ffffff" width="640px" align="center"
-                style="border-radius: 15px 15px 0px 0px;">
+            <table class="subcontainer" cellpadding="0" cellspacing="0">
                 <tr>
                     <td align="center" width="100%">
                         <!-- header -->
@@ -507,8 +557,8 @@ an order on our website{% endcapture %}
 <!-- footer -->
 <table class="footer">
     <tr>
-        <td align="center">
-            <table align="center" style="padding-top: 40px;">
+        <td style="text-align: center;">
+            <table class="footer-icons">
                 <tr>
 
                     <td style="padding: 0 10px"><a href="https://www.instagram.com/hummingbirdhammocks/"><img
@@ -541,14 +591,12 @@ an order on our website{% endcapture %}
         </td>
     </tr>
     <tr>
-        <td align="center" style="padding-bottom: 20px; padding-top: 30px; padding-left: 40px; padding-right: 40px;"
-            class="foot_text">
+        <td class="footer-text">
             <p style="color: #ffffff; text-transform: none;">{{ email_footer }}</p>
         </td>
     </tr>
     <tr>
-        <td align="center" style="padding-bottom: 40px; padding-top: 10px; padding-left: 40px; padding-right: 40px;"
-            class="foot_text">
+        <td class="footer-text">
             <p style="color: #ffffff; text-transform: none;">
                 <b>Hummingbird Hammocks</b><br />
                 18611 Cherry Springs Ranch Dr<br />
@@ -558,37 +606,46 @@ an order on our website{% endcapture %}
         </td>
     </tr>
     <tr>
-        <td>
-            <table align="center" style="margin-bottom: 35px;">
+        <td style="text-align: center;">
+            <table class="footer-link-section">
                 <tr>
-                    <td style="padding-right: 25px;" class="f1">
+                    <td class="f1">
                         <a href="mailto:support@hummingbirdhammocks.com" style="text-decoration: none;">
-                            <p style=" color: #ffffff; font-weight: 500;text-align: center;">Email Us</p>
+                            <strong>
+                                <p class="footer-link">Email
+                                    Us</p>
+                            </strong>
                         </a>
                     </td>
                     <td>
-                        <p style="color: #DADADA;">|</p>
+                        <p class="fd">|</p>
                     </td>
-                    <td style="padding: 0 25px;" class="f2">
+                    <td class="f2">
                         <a href="https://hummingbirdhammocks.com/" style="text-decoration: none;">
-                            <p style=" color: #ffffff; font-weight: 500;text-align: center;">Visit Website</p>
+                            <strong>
+                                <p class="footer-link">Visit Website</p>
+                            </strong>
                         </a>
                     </td>
                     <td>
-                        <p style="color: #DADADA;">|</p>
+                        <p class="fd">|</p>
                     </td>
-                    <td style="padding: 0 25px;" class="f3">
+                    <td class="f3">
                         <a href="https://help.hummingbirdhammocks.com/support/home" style="text-decoration: none;">
-                            <p style=" color: #ffffff; font-weight: 500;text-align: center;">Knowledgebase</p>
+                            <strong>
+                                <p class="footer-link">Knowledgebase</p>
+                            </strong>
                         </a>
                     </td>
                     <td>
-                        <p style="color: #DADADA;">|</p>
+                        <p class="fd">|</p>
                     </td>
-                    <td style="padding-left: 25px;" class="f4">
+                    <td class="f4">
                         <a href="https://help.hummingbirdhammocks.com/support/tickets/new"
                             style="text-decoration: none;">
-                            <p style=" color: #ffffff; font-weight: 500;text-align: center;">Support Ticket</p>
+                            <strong>
+                                <p class="footer-link">Support Ticket</p>
+                            </strong>
                         </a>
                     </td>
                 </tr>

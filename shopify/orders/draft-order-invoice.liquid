@@ -2,8 +2,9 @@
 email_sub_title %} {% if item_count > 1 %} {% if custom_message != blank %}{{
   custom_message
 }}{% else %} These items will be reserved for you until:
-<strong>{{ reserve_inventory_until | date: format:"default" }}</strong> {% else
-%} This item will be reserved for you until:
+<strong>{{ reserve_inventory_until | date: format:"default" }}</strong>
+<br /><br />{{ custom_message }}{% else %} This item will be reserved for you
+until:
 <strong
   >{{ reserve_inventory_until | date: format:"default" }} {%endif %}</strong
 >
@@ -518,7 +519,7 @@ our website{% endcapture %}
                     <tr>
                       <td width="48%" align="right">
                         <h3 style="text-align: right; font-weight: 600">
-                          Tax:
+                          Estimated Tax:
                         </h3>
                       </td>
                       <td width="4%" align="center"></td>

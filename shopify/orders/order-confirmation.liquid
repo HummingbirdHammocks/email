@@ -586,7 +586,6 @@ endcapture %}
                               transaction.payment_details.gift_card
                                 .last_four_characters | upcase
                             }}
-                            — <strong>{{ transaction.amount | money }}</strong>
                             <br />Gift card balance:
                             {{
                               transaction.payment_details.gift_card.balance
@@ -595,8 +594,7 @@ endcapture %}
                           </p>
                           {% else %}
                           <p style="text-align: left; margin: 0">
-                            {{ transaction.gateway_display_name }} —
-                            <strong>{{ transaction.amount | money }}</strong>
+                            {{ transaction.gateway_display_name }}
                           </p>
                           {% endif %} {% endif %} {% endif %}
                         </h3>
